@@ -1,7 +1,7 @@
 resource "azurerm_network_security_group" "nsg" {
   count               = length(var.azurem_security_group_name)
   name                = var.azurem_security_group_name[count.index]
-  location            = var.azurerm_resource_group_nsg_location
+  location            = var.azurerm_resource_group_nsg_location[count.index]
   resource_group_name = var.azurerm_resource_group_nsg_name
   dynamic "security_rule" {
     for_each = var.azurem_custom_nsg_rules
