@@ -4,7 +4,7 @@ variable "azurem_security_group_name" {
 }
 
 variable "azurerm_resource_group_nsg_location" {
-  type        = list(string)
+  type        = string
   description = "nsg location"
 }
 
